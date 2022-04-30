@@ -12,28 +12,29 @@
 
 
     <section id="conteiner-geral">
-        <span></span>
+        <span>Calc-Zig</span>
         <section id="conteiner-inner-display">
             <input type="text" id="display" value="0" disabled>
         </section>
         <section id="conteiner-inner-teclado">
-            <input type="button" value="7" onclick="atualizarDisplay(this)" id="button7" class="button"/>
-            <input type="button" value="8" onclick="atualizarDisplay(this)" id="button8" class="button"/>
-            <input type="button" value="9" onclick="atualizarDisplay(this)" id="button9" class="button"/>
-            <input type="button" value="*" onclick="atualizarOperacao(this)" id="buttonvezes" class="button" />
-            <input type="button" value="4" onclick="atualizarDisplay(this)" id="button4" class="button"/>
-            <input type="button" value="5" onclick="atualizarDisplay(this)" id="button5" class="button"/>
-            <input type="button" value="6" onclick="atualizarDisplay(this)" id="button6" class="button"/>
-            <input type="button" value="-" onclick="atualizarOperacao(this)" id="buttonmenos" class="button" />
-            <input type="button" value="1" onclick="atualizarDisplay(this)" id="button1" class="button"/>
-            <input type="button" value="2" onclick="atualizarDisplay(this)" id="button2" class="button"/>
-            <input type="button" value="3" onclick="atualizarDisplay(this)" id="button3" class="button"/>
-            <input type="button" value="+" onclick="atualizarOperacao(this)" id="buttonmais" class="button"/>
-            <input type="button" value="C" onclick="limparDisplay()" id="buttonc" class="button"/>
-            <input type="button" value="0" onclick="atualizarDisplay(this)" id="button0" class="button"/>
-            <input type="button" value="=" onclick="calcularOperacao()" id="buttonigual" class="button"/>
-            <input type="button" value="/" onclick="atualizarOperacao(this)" id="buttonbarra" class="button"/>
-            <input type="button" value="." onclick="atualizarOperacao(this)" id="buttonponto" class="button"/>
+            <input type="button" value="7" onclick="atualizarDisplay(this)" id="button-7" class="button"/>
+            <input type="button" value="8" onclick="atualizarDisplay(this)" id="button-8" class="button"/>
+            <input type="button" value="9" onclick="atualizarDisplay(this)" id="button-9" class="button"/>
+            <input type="button" value="*" onclick="atualizarOperacao(this)" id="button-vezes" class="button operacoes"/>
+            <input type="button" value="4" onclick="atualizarDisplay(this)" id="button-4" class="button"/>
+            <input type="button" value="5" onclick="atualizarDisplay(this)" id="button-5" class="button"/>
+            <input type="button" value="6" onclick="atualizarDisplay(this)" id="button-6" class="button"/>
+            <input type="button" value="-" onclick="atualizarOperacao(this)" id="button-menos" class="button operacoes"/>
+            <input type="button" value="1" onclick="atualizarDisplay(this)" id="button-1" class="button"/>
+            <input type="button" value="2" onclick="atualizarDisplay(this)" id="button-2" class="button"/>
+            <input type="button" value="3" onclick="atualizarDisplay(this)" id="button-3" class="button"/>
+            <input type="button" value="+" onclick="atualizarOperacao(this)" id="button-mais" class="button operacoes"/>
+            <input type="button" value="C" onclick="limparDisplay()" id="button-c" class="button"/>
+            <input type="button" value="0" onclick="atualizarDisplay(this)" id="button-0" class="button"/>
+            <input type="button" value="=" onclick="calcularOperacao()" id="button-igual" class="button"/>
+            <input type="button" value="/" onclick="atualizarOperacao(this)" id="button-barra" class="button operacoes"/>
+            <input type="button" value="." onclick="atualizarOperacao(this)" id="button-ponto" class="button"/>
+            <input type="button" value="%" onclick="atualizarOperacao(this)" id="button-porcentagem" class="button"/>
         </section>
     </section>
     <script src="js/calc_functions.js"></script>
