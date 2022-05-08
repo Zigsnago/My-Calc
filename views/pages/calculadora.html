@@ -31,10 +31,14 @@
             <input type="button" value="+" onclick="atualizarOperacao(this)" id="button-mais" class="button operacoes"/>
             <input type="button" value="C" onclick="limparDisplay()" id="button-c" class="button"/>
             <input type="button" value="0" onclick="atualizarDisplay(this)" id="button-0" class="button"/>
+            <input type="button" value="%" onclick="atualizarDisplay(this)" id="button-porcentagem" class="button"/>
             <input type="button" value="=" onclick="calcularOperacao()" id="button-igual" class="button"/>
             <input type="button" value="/" onclick="atualizarOperacao(this)" id="button-barra" class="button operacoes"/>
-            <input type="button" value="." onclick="atualizarOperacao(this)" id="button-ponto" class="button"/>
-            <input type="button" value="%" onclick="atualizarOperacao(this)" id="button-porcentagem" class="button"/>
+            <input type="button" value="." onclick="atualizarDisplay(this)" id="button-ponto" class="button"/>
+            <input type="button" value="(" onclick="atualizarDisplay(this)" id="abre-p" class="button"/>
+            <input type="button" value=")" onclick="atualizarDisplay(this)" id="fecha-p" class="button"/>
+            <!-- <input type="button" value="√" onclick="calcularOperacao()" id="button-igual" class="button"/> -->
+            <button class="button" value="√" onclick="atualizarOperacao(this)" id="button-raiz">√</button>
         </section>
     </section>
     <script src="js/calc_functions.js"></script>

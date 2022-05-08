@@ -10,18 +10,41 @@ function limparDisplay(){
 }
 
 var operador = ''
-var valor1 = 0
+var valor1 
 function atualizarOperacao(btn){
     const display = document.getElementById('display');
-    operador = btn.value;
-    valor1 = parseInt(display.value);
-    display.value = '0';
+    if(btn.value == "( )"){
+        display.value = addDentro(display.value)
+    }
+    if(btn.value == "√"){
+        display.value = "√"
+     }
+    else{
+        operador = btn.value;
+        valor1 = display.value;
+        display.value += btn.value;
+    }
+    
+}
+
+function addDentro(valor){
+    return "("+valor+")"
 }
 
 function calcularOperacao(){
     const display = document.getElementById('display');
-    const valor2 = parseInt(display.value);
-    valor1 = eval(valor1+operador+valor2);
+    let valor2 = display.value;
+    if(valor2.includes("√")){
+        let resultado = Math.sqrt(valor2.substr(valor2.indexOf("√")+1, verificaOperaçao(valor2)-1)).toFixed(2)
+        var aposSinal = ""
+        if(verificaOperaçao(valor2) != valor2.length){
+            aposSinal = valor2.substr(verificaOperaçao(valor2), valor2.length)
+            console.log(aposSinal)
+        }
+        valor2 = resultado+aposSinal
+        console.log(valor2)
+    }
+    valor1 = eval(valor2);
     display.value = valor1;
     operador = '';
 }       
@@ -29,4 +52,18 @@ function calcularOperacao(){
 function manipularTeclado(){
     if(/[0-9]/.test(event.key))
         atualizarDisplay({value: event.key});
+}
+
+function verificaOperaçao(string){
+    if(string.includes("+") == true){
+        return string.indexOf("+")
+    }else if(string.includes("-") == true){
+        return string.indexOf("-")
+    }else if(string.includes("*") == true){
+        return string.indexOf("*")
+    }else if(string.includes("/") == true){
+        return string.indexOf("/")
+    }else{
+        return string.length;
+    }
 }
