@@ -13,9 +13,7 @@ var operador = ''
 var valor1
 function atualizarOperacao(btn) {
     const display = document.getElementById('display');
-    if (btn.value == "( )") {
-        display.value = addDentro(display.value)
-    }
+
     if (btn.value == "√") {
         if (display.value == "0") {
             display.value = "√"
@@ -31,16 +29,14 @@ function atualizarOperacao(btn) {
 
 }
 
-function addDentro(valor) {
-    return "(" + valor + ")"
-}
+
 
 function calcularOperacao() {
     const display = document.getElementById('display');
     let valor2 = display.value;
-    valor2 = VerificaRaiz(valor2)
+    
 
-    valor1 = eval(valor2);
+    valor1 = eval(fazRaiz(valor2));
     display.value = valor1;
     operador = '';
 }
@@ -50,45 +46,9 @@ function manipularTeclado() {
         atualizarDisplay({ value: event.key });
 }
 
-function VerificaRaiz(string) {
-    let newString = string
-    while (newString.includes("√")) {
-        var indiceRaiz = newString.indexOf("√")
-        if (verificaOperaçao(newString) > indiceRaiz) {
 
-            newString = newString.replace(newString.substr(indiceRaiz, verificaOperaçao(newString)), Math.sqrt(newString.substr(indiceRaiz + 1, verificaOperaçao(newString) - 1)))
-
-        } else {
-
-            newString = newString.replace(newString.substr(indiceRaiz, newString.length - 1), Math.sqrt(newString.substr(indiceRaiz + 1, newString.length - 1)))
-
-        }
-    }
-    
-    return newString
+function fazRaiz(string){
+    return string.replace(/√([0-9]+)/g, "Math.sqrt($1)").replace(/√\(/, "Math.sqrt(")
 }
 
 
-
-
-
-function verificaOperaçao(string) {
-    if (string.includes("+") || string.includes("-") || string.includes("*") || string.includes("/")) {
-        var indicemenor = 10000
-        if (string.includes("-") == true && string.indexOf("-") < indicemenor) {
-            indicemenor = string.indexOf("-")
-        }
-        if (string.includes("*") == true && string.indexOf("*") < indicemenor) {
-            indicemenor = string.indexOf("*")
-        }
-        if (string.includes("/") == true && string.indexOf("/") < indicemenor) {
-            indicemenor = string.indexOf("/")
-        }
-        if (string.includes("+") == true && string.indexOf("+") < indicemenor) {
-            indicemenor = string.indexOf("+")
-        }
-    } else {
-        indicemenor = string.length
-    }
-    return indicemenor;
-}
