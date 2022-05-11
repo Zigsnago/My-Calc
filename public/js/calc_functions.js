@@ -53,17 +53,18 @@ function manipularTeclado() {
 function VerificaRaiz(string) {
     let newString = string
     while (newString.includes("√")) {
-        var indiceRaiz = string.indexOf("√")
-        if (verificaOperaçao(string) > indiceRaiz) {
+        var indiceRaiz = newString.indexOf("√")
+        if (verificaOperaçao(newString) > indiceRaiz) {
 
-            newString = string.replace(string.substr(indiceRaiz, verificaOperaçao(string)), Math.sqrt(string.substr(indiceRaiz + 1, verificaOperaçao(string) - 1)))
+            newString = newString.replace(newString.substr(indiceRaiz, verificaOperaçao(newString)), Math.sqrt(newString.substr(indiceRaiz + 1, verificaOperaçao(newString) - 1)))
 
         } else {
 
-            newString = string.replace(string.substr(indiceRaiz, string.length - 1), Math.sqrt(string.substr(indiceRaiz + 1, string.length - 1)))
+            newString = newString.replace(newString.substr(indiceRaiz, newString.length - 1), Math.sqrt(newString.substr(indiceRaiz + 1, newString.length - 1)))
 
         }
     }
+    
     return newString
 }
 
