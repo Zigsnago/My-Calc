@@ -34,11 +34,13 @@
             <input type="button" value="%" onclick="atualizarDisplay(this)" id="button-porcentagem" class="button"/>
             <input type="button" value="=" onclick="calcularOperacao()" id="button-igual" class="button"/>
             <input type="button" value="/" onclick="atualizarOperacao(this)" id="button-barra" class="button operacoes"/>
-            <input type="button" value="." onclick="atualizarDisplay(this)" id="button-ponto" class="button"/>
+            <input type="button" value="**" onclick="atualizarOperacao(this)" id="expoente" class="button"/>
             <input type="button" value="(" onclick="atualizarDisplay(this)" id="abre-p" class="button"/>
             <input type="button" value=")" onclick="atualizarDisplay(this)" id="fecha-p" class="button"/>
             <!-- <input type="button" value="√" onclick="calcularOperacao()" id="button-igual" class="button"/> -->
             <button class="button" value="√" onclick="atualizarOperacao(this)" id="button-raiz">√</button>
+            
+            <input type="button" value="." onclick="atualizarDisplay(this)" id="button-ponto" class="button"/>
         </section>
     </section>
     <script src="js/calc_functions.js"></script>
