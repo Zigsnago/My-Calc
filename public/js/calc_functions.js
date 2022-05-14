@@ -9,6 +9,12 @@ function limparDisplay() {
     document.getElementById('display').value = '0';
 }
 
+function limparUmPorUm(){
+    let display = document.getElementById('display').value
+    display = display.replace(display[display.length-1], "")
+    document.getElementById('display').value = display
+}
+
 var operador = ''
 var valor1
 function atualizarOperacao(btn) {

@@ -145,6 +145,11 @@ body {
     grid-row: 3;
 }
 
+#button-ce{
+    grid-column: 4;
+    grid-row: 5;
+}
+
 .operacoes {
     background-image: linear-gradient(#fc914a, #e9630a);
 }
